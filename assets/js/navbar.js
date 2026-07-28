@@ -1,55 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navbarPlaceholder = document.getElementById('navbar-placeholder');
-    if (!navbarPlaceholder) return;
+    // 1. Tentukan path relatif ke folder assets berdasarkan lokasi halaman saat ini
+    // Jika file berada di root (index.html utama), path ke assets adalah 'assets/'
+    // Jika di dalam subfolder (about/, contact/, dll.), path ke assets adalah '../assets/'
+    const isRoot = window.location.pathname === '/' || window.location.pathname.endsWith('index.html') && window.location.pathname.split('/').filter(Boolean).length === 0;
+    
+    // Cara alternatif yang lebih aman mendeteksi kedalaman folder:
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    // Jika path berisi nama folder selain root (misal: /about/index.html -> length 2 atau lebih, atau tergantung hosting)
+    // Mari gunakan deteksi otomatis berdasarkan level folder:
+    const depth = pathSegments.length > 0 && !window.location.pathname.endsWith('index.html') ? pathSegments.length : pathSegments.length - 1;
+    
+    // Atau cara paling gampang dan akurat: kita buat fungsi helper atau cek path string
+    const currentPath = window.location.pathname;
+    let assetsPath = 'assets/';
+    let rootPath = './';
+    
+    // Jika berada di dalam subfolder (ada kata /about/, /project/, /blog/, /contact/, /blog-detail/)
+    if (currentPath.includes('/about/') || 
+        currentPath.includes('/project/') || 
+        currentPath.includes('/blog/') || 
+        currentPath.includes('/blog-detail/') || 
+        currentPath.includes('/contact/')) {
+        assetsPath = '../assets/';
+        rootPath = '../';
+    }
 
-    fetch('/assets/components/navbar.html')
-        .then(response => response.text())
+    // 2. Fetch file navbar.html
+    fetch(assetsPath + 'components/navbar.html')
+        .then(response => {
+            if (!response.ok) throw new Error('Gagal memuat navbar');
+            return response.text();
+        })
         .then(data => {
-            navbarPlaceholder.innerHTML = data;
+            // Masukkan navbar ke dalam placeholder
+            const placeholder = document.getElementById('navbar-placeholder');
+            if (placeholder) {
+                placeholder.innerHTML = data;
 
-            // --- PENYESUAIAN OTOMATIS SEMUA LINK UNTUK GITHUB PAGES / CPANEL ---
-            const isGitHubPages = window.location.hostname.includes("github.io");
-            const basePath = isGitHubPages ? "/test-konstruksi-gs" : "";
-
-            // 1. Atur Link Home
-            const homeLinks = navbarPlaceholder.querySelectorAll('#home-link');
-            homeLinks.forEach(link => {
-                link.setAttribute("href", basePath + "/");
-            });
-
-            // 2. Atur Link Menu Lainnya (About, Project, Blog, Contact, dll)
-            const navLinksAll = navbarPlaceholder.querySelectorAll('.nav-link');
-            navLinksAll.forEach(link => {
-                const currentHref = link.getAttribute('href');
-                // Jika href berawal dari garis miring dan bukan link '#' atau eksternal
-                if (currentHref && currentHref.startsWith('/') && currentHref !== '#') {
-                    link.setAttribute('href', basePath + currentHref);
-                }
-            });
-            // -----------------------------------------------------------------
-
-            // Logika otomatis mendeteksi halaman aktif
-            const pathSegments = window.location.pathname.split("/").filter(Boolean);
-            // Sesuaikan indeks jika di GitHub Pages karena ada segmen tambahan nama repo
-            const pageIndex = isGitHubPages ? 1 : 0;
-            const currentPage = pathSegments.length > pageIndex ? pathSegments[pathSegments.length - 1] : "index";
-
-            navLinksAll.forEach(link => {
-                const dataPage = link.getAttribute('data-page');
-                if (dataPage === currentPage || (pathSegments.length <= pageIndex && dataPage === "index")) {
-                    link.classList.add('text-blue-300', 'font-semibold');
-                }
-            });
-
-            // Re-inisialisasi tombol hamburger menu mobile
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+                // 3. Perbaiki link href secara dinamis agar sesuai dengan posisi halaman
+                const navLinks = placeholder.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    const page = link.getAttribute('data-page');
+                    if (page === 'index') {
+                        link.href = rootPath;
+                    } else if (page === 'testimoni') {
+                        link.href = rootPath + '#testimoni'; // sesuaikan jika berupa section ID
+                    } else {
+                        link.href = rootPath + page + '/';
+                    }
                 });
+
+                // 4. Aktifkan Toggle Mobile Menu
+                const menuBtn = document.getElementById('menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                if (menuBtn && mobileMenu) {
+                    menuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                }
             }
         })
-        .catch(error => console.error("Gagal memuat navbar:", error));
+        .catch(error => console.error('Error loading navbar:', error));
 });
