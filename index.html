@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB Contractor | Excellence in Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/transisi.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="relative min-h-screen">
+    <!-- Background Fixed -->
+    <div class="fixed inset-0 -z-50 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center bg-no-repeat"></div>    
+    
+    <!-- Navbar Wrapper (Otomatis dimuat oleh JavaScript) -->
+    <div id="navbar-placeholder" class="fixed top-0 w-full z-50"></div>
+
+    <!-- Home -->
+    <section id="home" class="relative h-screen flex items-center justify-start px-6 md:px-10 lg:px-20 overflow-hidden">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+            <source src="assets/video/beranda.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+            
+        <div class="relative z-10 text-white max-w-2xl px-2">
+            <h1 id="home-title" class="fade-element text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                Loading...
+            </h1>
+            
+            <p id="home-subtitle" class="fade-element text-base sm:text-lg mb-8 leading-relaxed text-blue-100">
+                Loading...
+            </p>
+            
+            <a id="home-cta" href="#contact" class="fade-element inline-flex items-center text-sm sm:text-base text-white font-semibold border-b-2 border-white pb-1 hover:text-blue-200 hover:border-blue-200 transition">
+                FREE CONSULTATION &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Angka (Statistik) -->
+    <section class="w-full bg-white relative z-20 py-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                
+                <!-- Card 1 -->
+                <div class="bg-blue-900 text-white p-8 rounded-sm shadow-xl">
+                    <h3 class="text-4xl font-bold mb-2">
+                        <span id="stat_1-val" class="fade-element">0</span>+
+                    </h3>
+                    <p class="text-sm">
+                        <span id="stat_1-title" class="fade-element block">Loading...</span>
+                        <span id="stat_1-sub" class="fade-element opacity-60 text-xs">Loading...</span>
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-blue-900 text-white p-8 rounded-sm shadow-xl">
+                    <h3 class="text-4xl font-bold mb-2">
+                        <span id="stat_2-val" class="fade-element">0</span>+
+                    </h3>
+                    <p class="text-sm">
+                        <span id="stat_2-title" class="fade-element block">Loading...</span>
+                        <span id="stat_2-sub" class="fade-element opacity-60 text-xs">Loading...</span>
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-blue-900 text-white p-8 rounded-sm shadow-xl">
+                    <h3 class="text-4xl font-bold mb-2">
+                        <span id="stat_3-val" class="fade-element">0</span>+
+                    </h3>
+                    <p class="text-sm">
+                        <span id="stat_3-title" class="fade-element block">Loading...</span>
+                        <span id="stat_3-sub" class="fade-element opacity-60 text-xs">Loading...</span>
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-blue-900 text-white p-8 rounded-sm shadow-xl">
+                    <h3 class="text-4xl font-bold mb-2">
+                        <span id="stat_4-val" class="fade-element">0</span> m²+
+                    </h3>
+                    <p class="text-sm">
+                        <span id="stat_4-title" class="fade-element block">Loading...</span>
+                        <span id="stat_4-sub" class="fade-element opacity-60 text-xs">Loading...</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tentang -->
+    <section id="about" class="w-full bg-white py-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h4 class="text-blue-600 font-semibold tracking-widest text-sm mb-4 uppercase">Our Profile</h4>
+                <h2 class="text-4xl font-bold mb-6">About WEB Contractor</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">WEB Contractor stands as a trusted partner in the construction world. We integrate modern technology with technical expertise to ensure that every structure we build is not only technically sound but also aesthetic and functional.</p>
+                <a href="#" class="inline-flex items-center text-blue-900 font-bold border-b-2 border-blue-900 pb-1 hover:text-blue-600 hover:border-blue-600 transition">
+                    LEARN MORE &rarr;
+                </a>
+            </div>
+            <div class="bg-gray-200 h-80 rounded-lg flex items-center justify-center text-gray-500 shadow-xl overflow-hidden">
+                <video class="w-full h-full object-cover" controls>
+                    <source src="assets/video/beranda.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung tag video.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-blue-950/50 text-white w-full">
+        <div class="container mx-auto px-6">
+            <h4 class="text-blue-400 font-semibold tracking-widest text-sm mb-4 uppercase">Our Workflow</h4>
+            <h2 class="text-4xl font-bold mb-20">Strategic Steps Towards Excellent Results</h2>
+            
+            <!-- Wrapper Grid -->
+            <div class="relative grid md:grid-cols-4 gap-8">
+                <!-- Garis Penghubung (Hanya muncul di Desktop) -->
+                <div class="absolute top-6 left-0 w-full h-0.5 bg-blue-700 hidden md:block z-0"></div>
+    
+                <!-- Step 1 -->
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full mb-6 border-4 border-blue-950 flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+                    <h3 class="text-xl font-bold mb-4">Consultation</h3>
+                    <p class="text-blue-200 text-sm leading-relaxed">Understanding your vision, budget, and requirements through detailed project analysis.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full mb-6 border-4 border-blue-950 flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+                    <h3 class="text-xl font-bold mb-4">Planning</h3>
+                    <p class="text-blue-200 text-sm leading-relaxed">Handling blueprints, engineering calculations, and all necessary legal building permits.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full mb-6 border-4 border-blue-950 flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+                    <h3 class="text-xl font-bold mb-4">Construction</h3>
+                    <p class="text-blue-200 text-sm leading-relaxed">Executing structure and foundation works with high-quality materials and professional safety.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full mb-6 border-4 border-blue-950 flex items-center justify-center font-bold text-lg shadow-lg">4</div>
+                    <h3 class="text-xl font-bold mb-4">Finishing</h3>
+                    <p class="text-blue-200 text-sm leading-relaxed">Finalizing interior/exterior aesthetics and rigorous quality checks before handover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full bg-white relative z-20 py-10">
+        <div class="container mx-auto px-6">
+            <h4 class="text-yellow-600 font-semibold tracking-widest text-sm mb-4 uppercase">Our Values</h4>
+            <h2 class="text-4xl font-bold mb-12 text-blue-900">Commitment to Quality</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Precision -->
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" alt="Extreme Precision" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-blue-500 font-bold text-xl mb-3">Extreme Precision</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">We believe that the best quality is born from attention to detail. Every corner and material is chosen to provide maximum satisfaction.</p>
+                </div>
+                
+                <!-- Card 2: Innovation -->
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.pexels.com/photos/5849581/pexels-photo-5849581.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Innovation" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-blue-500 font-bold text-xl mb-3">Innovative Solutions</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Facing field challenges with creative and smart solutions. We adapt without compromising safety or project integrity.</p>
+                </div>
+                
+                <!-- Card 3: Transparency -->
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Full Transparency" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-blue-500 font-bold text-xl mb-3">Full Transparency</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Honest and regular communication is the key to project security. We always prioritize clear information at every stage of work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h4 class="text-blue-600 font-semibold tracking-widest text-sm mb-4 uppercase">Our Work</h4>
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-4xl font-bold">Selected Projects</h2>
+                <a href="projects.html" class="text-blue-900 font-bold border-b-2 border-blue-900 pb-1 hover:text-blue-600 transition">VIEW FULL GALLERY &rarr;</a>
+            </div>
+            
+            <!-- Kontainer dengan Skeleton Loader bawaan -->
+            <div id="3projects-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skeleton 1 -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm animate-pulse">
+                    <div class="h-64 sm:h-72 bg-gray-200 w-full"></div>
+                    <div class="p-5">
+                        <div class="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-full"></div>
+                    </div>
+                </div>
+                <!-- Skeleton 2 -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm animate-pulse">
+                    <div class="h-64 sm:h-72 bg-gray-200 w-full"></div>
+                    <div class="p-5">
+                        <div class="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-full"></div>
+                    </div>
+                </div>
+                <!-- Skeleton 3 -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm animate-pulse">
+                    <div class="h-64 sm:h-72 bg-gray-200 w-full"></div>
+                    <div class="p-5">
+                        <div class="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-24 bg-blue-950/50">
+        <!-- Konten -->
+        <div class="relative z-20 container mx-auto px-6 text-center text-white">
+            <div class="mb-6 font-bold tracking-widest text-xl">WEB <span class="font-light">CONTRACTOR</span></div>
+            
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Build Your Vision<br>to Perfection</h2>
+            
+            <p class="text-blue-100 max-w-xl mx-auto mb-10 leading-relaxed">
+                Contact us and start your journey to building your dream home with exceptional quality.
+            </p>
+            
+            <div>
+                <a href="#contact" class="inline-block border-2 border-white px-8 py-3 font-semibold hover:bg-white hover:text-blue-950 transition duration-300">
+                    CONSULT WITH US NOW &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-8">Contact Us</h2>
+                <div class="space-y-6">
+                    <p class="flex items-start gap-4">
+                        <span class="text-blue-600 font-bold text-xl">📍</span>
+                        <span>Jl. Surabaya</span>
+                    </p>
+                    
+                    <p class="flex items-center gap-4">
+                        <span class="text-blue-600 font-bold text-xl">✉️</span>
+                        <a href="mailto:iniemail@gmail.com" class="hover:text-blue-600 transition">iniemail@gmail.com</a>
+                    </p>
+                    
+                    <p class="flex items-center gap-4">
+                        <span class="text-blue-600 font-bold text-xl">📞</span>
+                        <a href="https://wa.me/6281234567890" class="hover:text-blue-600 transition">+62 812-3456-7890</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Kontainer Peta -->
+            <div class="bg-gray-200 h-80 rounded-lg flex items-center justify-center shadow-lg border border-gray-100 overflow-hidden">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9413.242796372218!2d112.73478372421005!3d-7.265738766942504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f960aee9a64d%3A0xaa9e2f2c4ed67175!2sTunjungan%20Plaza!5e0!3m2!1sid!2sid!4v1782756685084!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-950 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            &copy; 2026 WEB Contractor. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Tombol WhatsApp Floating -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 z-50 transition-transform duration-300 hover:scale-110">
+        <div class="bg-green-500 w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </div>
+    </a>
+
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/maps.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script src="assets/js/statistik.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/home-projects.js"></script>
+</body>
+</html>
