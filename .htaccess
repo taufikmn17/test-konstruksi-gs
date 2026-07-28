@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Jika file/folder ada, jangan rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Home
+RewriteRule ^$ index.html [L]
+
+# Semua URL diarahkan ke file html
+RewriteRule ^([a-zA-Z0-9-_]+)/?$ $1.html [L]
